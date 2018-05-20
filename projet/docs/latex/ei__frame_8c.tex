@@ -1,0 +1,92 @@
+\hypertarget{ei__frame_8c}{\section{ei\-\_\-frame.\-c File Reference}
+\label{ei__frame_8c}\index{ei\-\_\-frame.\-c@{ei\-\_\-frame.\-c}}
+}
+{\ttfamily \#include \char`\"{}ei\-\_\-frame.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{ei__frame_8c_aab82369e73c1be298d61dda4dabc8cd5}{ei\-\_\-frame\-\_\-allocfunc\-\_\-t} ()
+\begin{DoxyCompactList}\small\item\em allocate the memory for frame \end{DoxyCompactList}\item 
+void \hyperlink{ei__frame_8c_aafc3f0bf944d32d443a7679b75447aff}{ei\-\_\-frame\-\_\-drawfunc\-\_\-t} (struct \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget, \hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} surface, \hyperlink{hw__interface_8h_ad9970ae727c438faaf09c58c5defb796}{ei\-\_\-surface\-\_\-t} pick\-\_\-surface, \hyperlink{structei__rect__t}{ei\-\_\-rect\-\_\-t} $\ast$clipper)
+\begin{DoxyCompactList}\small\item\em A function that draws widgets of a class. \end{DoxyCompactList}\item 
+void \hyperlink{ei__frame_8c_a2453f0cf4424b70fd838383e03a8a583}{ei\-\_\-frame\-\_\-releasefunc\-\_\-t} (struct \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} $\ast$widget)
+\begin{DoxyCompactList}\small\item\em A function that releases the memory used by a F\-R\-A\-M\-E widget before it is destroyed. The \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} structure itself, passed as parameter, must {\itshape not} by freed by these functions. Can be set to N\-U\-L\-L in \hyperlink{structei__widgetclass__t}{ei\-\_\-widgetclass\-\_\-t} if no memory is used by a class of widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{ei__frame_8c_aab82369e73c1be298d61dda4dabc8cd5}{\index{ei\-\_\-frame.\-c@{ei\-\_\-frame.\-c}!ei\-\_\-frame\-\_\-allocfunc\-\_\-t@{ei\-\_\-frame\-\_\-allocfunc\-\_\-t}}
+\index{ei\-\_\-frame\-\_\-allocfunc\-\_\-t@{ei\-\_\-frame\-\_\-allocfunc\-\_\-t}!ei_frame.c@{ei\-\_\-frame.\-c}}
+\subsubsection[{ei\-\_\-frame\-\_\-allocfunc\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ ei\-\_\-frame\-\_\-allocfunc\-\_\-t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ei__frame_8c_aab82369e73c1be298d61dda4dabc8cd5}
+
+
+allocate the memory for frame 
+
+memory allocation for frame widgetclass structure 
+
+Definition at line 8 of file ei\-\_\-frame.\-c.
+
+\hypertarget{ei__frame_8c_aafc3f0bf944d32d443a7679b75447aff}{\index{ei\-\_\-frame.\-c@{ei\-\_\-frame.\-c}!ei\-\_\-frame\-\_\-drawfunc\-\_\-t@{ei\-\_\-frame\-\_\-drawfunc\-\_\-t}}
+\index{ei\-\_\-frame\-\_\-drawfunc\-\_\-t@{ei\-\_\-frame\-\_\-drawfunc\-\_\-t}!ei_frame.c@{ei\-\_\-frame.\-c}}
+\subsubsection[{ei\-\_\-frame\-\_\-drawfunc\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-frame\-\_\-drawfunc\-\_\-t (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget, }
+\item[{{\bf ei\-\_\-surface\-\_\-t}}]{surface, }
+\item[{{\bf ei\-\_\-surface\-\_\-t}}]{pick\-\_\-surface, }
+\item[{{\bf ei\-\_\-rect\-\_\-t} $\ast$}]{clipper}
+\end{DoxyParamCaption}
+)}}\label{ei__frame_8c_aafc3f0bf944d32d443a7679b75447aff}
+
+
+A function that draws widgets of a class. 
+
+A function drawing the frame widgetclass.
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & A pointer to the widget instance to draw. \\
+\hline
+{\em surface} & Where to draw the widget. The actual location of the widget in the surface is stored in its \char`\"{}screen\-\_\-location\char`\"{} field. \\
+\hline
+{\em pick\-\_\-surface} & The surface used for picking (i.\-e. find the widget below the mouse pointer). \\
+\hline
+{\em clipper} & If not N\-U\-L\-L, the drawing is restricted within this rectangle (expressed in the surface reference frame). \\
+\hline
+\end{DoxyParams}
+$<$ filling the frame with its color
+
+$<$ adressing the top-\/left corner as a point from its anchor
+
+$<$ Drawing said text
+
+$<$ drawing image if exists 
+
+Definition at line 23 of file ei\-\_\-frame.\-c.
+
+\hypertarget{ei__frame_8c_a2453f0cf4424b70fd838383e03a8a583}{\index{ei\-\_\-frame.\-c@{ei\-\_\-frame.\-c}!ei\-\_\-frame\-\_\-releasefunc\-\_\-t@{ei\-\_\-frame\-\_\-releasefunc\-\_\-t}}
+\index{ei\-\_\-frame\-\_\-releasefunc\-\_\-t@{ei\-\_\-frame\-\_\-releasefunc\-\_\-t}!ei_frame.c@{ei\-\_\-frame.\-c}}
+\subsubsection[{ei\-\_\-frame\-\_\-releasefunc\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}void ei\-\_\-frame\-\_\-releasefunc\-\_\-t (
+\begin{DoxyParamCaption}
+\item[{struct {\bf ei\-\_\-widget\-\_\-t} $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}}\label{ei__frame_8c_a2453f0cf4424b70fd838383e03a8a583}
+
+
+A function that releases the memory used by a F\-R\-A\-M\-E widget before it is destroyed. The \hyperlink{structei__widget__t}{ei\-\_\-widget\-\_\-t} structure itself, passed as parameter, must {\itshape not} by freed by these functions. Can be set to N\-U\-L\-L in \hyperlink{structei__widgetclass__t}{ei\-\_\-widgetclass\-\_\-t} if no memory is used by a class of widget. 
+
+memory liberation for frame widgetclass structure
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & The widget which resources are to be freed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file ei\-\_\-frame.\-c.
+

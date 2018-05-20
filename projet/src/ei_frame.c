@@ -1,6 +1,6 @@
 #include "ei_frame.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include "ei_types.h"
 
 /**
   *\brief allocate the memory for frame
@@ -70,13 +70,14 @@ void ei_frame_releasefunc_t(struct ei_widget_t* widget)
         free(((ei_frame_t*)widget) -> anchor_image);
 }
 
-void ei_frame_setdefaultsfunc_t (struct ei_widget_t*   widget)
+void ei_frame_setdefaultsfunc_t(struct ei_widget_t*   widget)
 {
-        ((ei_frame_t*)widget) -> color = ei_default_background_color;
+        ei_color_t default_color = ei_default_background_color;
+        ei_relief_t relief = ei_relief_none;
+        ei_color_t text_defaut_color = ei_font_default_color;
+        ((ei_frame_t*)widget) -> color = &default_color;
         ((ei_frame_t*)widget) -> border_width = 0;
-        ((ei_frame_t*)widget) -> relief = ei_relief_none;
-        ((ei_frame_t*)widget) -> font = ei_default_font;
-        ((ei_frame_t*)widget) -> color_text = ei_font_default_color;
-        ((ei_frame_t*)widget) -> anchor_text = ei_anc_center;
-        ((ei_frame_t*)widget) -> anchor_image = ei_anc_center;
+        ((ei_frame_t*)widget) -> relief = &relief;
+        ((ei_frame_t*)widget) -> font = &ei_default_font;
+        ((ei_frame_t*)widget) -> color_text = &text_defaut_color;
 }

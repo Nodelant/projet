@@ -62,6 +62,6 @@ void ei_frame_drawfunc_t (struct ei_widget_t*   widget,
  *
  * @param as the widgetclass_setdefautlsfunc_t parameters
  */
-void ei_frame_setdefaultsfunc_t (struct ei_widget_t*   widget)
+void ei_frame_setdefaultsfunc_t (struct ei_widget_t*   widget);
 
 #endif

@@ -9,7 +9,7 @@ void ei_app_create(ei_size_t* main_window_size, ei_bool_t fullscreen)
   // il va falloir appeler ei_widgetclass_register ici.
 //  surface_fenetre_syst = malloc(main_window_size->width*main_window_size->height*4)
   ei_surface_t surface_fenetre_syst = NULL;
-  surface_fenetre_syst =  hw_create_window(main_window_size, fullscreen);
+  surface_fenetre_syst = hw_create_window(main_window_size, fullscreen);
 }
 
 

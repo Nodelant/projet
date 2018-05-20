@@ -19,7 +19,7 @@
  * \brief A structure that stores specific information about a frame widget class
  */
 typedef struct ei_frame_t {
-        ei_widget_t*          widget; ///< Structure commune enntre tous les widget
+        ei_widget_t*          widget; ///< Structure commune enntre tous les widgets
         ei_color_t*           color; ///< Couleur du cadre
         int*                  border_width; ///< largeur de la bordure du cadre
         ei_relief_t*          relief; ///< Relief du cadre
@@ -62,7 +62,6 @@ void ei_frame_drawfunc_t (struct ei_widget_t*   widget,
  *
  * @param as the widgetclass_setdefautlsfunc_t parameters
  */
-void ei_frame_setdefaultsfunc_t (struct ei_widget_t*   widget,
-                                  ei_rect_t rect);
+void ei_frame_setdefaultsfunc_t (struct ei_widget_t*   widget)
 
 #endif

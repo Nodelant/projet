@@ -6,6 +6,9 @@
 /**
   *\brief allocate the memory for frame
  */
+
+ei_point_t* associate_point_anchor  (enum ei_anchor_t    anchor,
+                                     ei_surface_t    surface);
 void* ei_frame_allocfunc_t()
 {
         return malloc(sizeof(ei_frame_t));
@@ -74,14 +77,6 @@ void ei_frame_setdefaultsfunc_t(struct ei_widget_t*   widget)
         ((ei_frame_t*)widget) -> font = &ei_default_font;
         ((ei_frame_t*)widget) -> color_text = &text_defaut_color;
 }
-
-//Création et enregistrement de la classe frame
-ei_widgetclass_t frame;
-// frame.ei_widgetclass_name_t = "frame";
-// frame.allocfunc = &ei_frame_allocfunc_t;
-// frame.releasefunc = &ei_frame_releasefunc_t;
-// frame.drawfunc = &ei_frame_drawfunc_t;
-// frame.setdefaultsfunc = &ei_frame_setdefaultsfunc_t;
 
 // Fonction utilitaire pour ei_frame_drawfunc_t :
 ei_point_t* associate_point_anchor  (enum ei_anchor_t    anchor,

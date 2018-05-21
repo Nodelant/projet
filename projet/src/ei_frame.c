@@ -83,7 +83,7 @@ void ei_frame_setdefaultsfunc_t(struct ei_widget_t*   widget)
 //Création et enregistrement de la classe frame
 ei_widgetclass_t frame;
 // frame.ei_widgetclass_name_t = "frame";
-frame.allocfunc = &ei_frame_allocfunc_t;
+// frame.allocfunc = &ei_frame_allocfunc_t;
 // frame.releasefunc = &ei_frame_releasefunc_t;
 // frame.drawfunc = &ei_frame_drawfunc_t;
 // frame.setdefaultsfunc = &ei_frame_setdefaultsfunc_t;

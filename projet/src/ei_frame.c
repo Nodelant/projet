@@ -1,6 +1,7 @@
 #include "ei_frame.h"
 #include <stdlib.h>
 #include "ei_types.h"
+#include "ei_widgetclass.h"
 
 /**
   *\brief allocate the memory for frame
@@ -73,11 +74,16 @@ void ei_frame_releasefunc_t(struct ei_widget_t* widget)
 void ei_frame_setdefaultsfunc_t(struct ei_widget_t*   widget)
 {
         ei_color_t default_color = ei_default_background_color;
-        ei_relief_t relief = ei_relief_none;
         ei_color_t text_defaut_color = ei_font_default_color;
         ((ei_frame_t*)widget) -> color = &default_color;
-        ((ei_frame_t*)widget) -> border_width = 0;
-        ((ei_frame_t*)widget) -> relief = &relief;
         ((ei_frame_t*)widget) -> font = &ei_default_font;
         ((ei_frame_t*)widget) -> color_text = &text_defaut_color;
 }
+
+//Création et enregistrement de la classe frame
+ei_widgetclass_t frame;
+// frame.ei_widgetclass_name_t = "frame";
+frame.allocfunc = &ei_frame_allocfunc_t;
+// frame.releasefunc = &ei_frame_releasefunc_t;
+// frame.drawfunc = &ei_frame_drawfunc_t;
+// frame.setdefaultsfunc = &ei_frame_setdefaultsfunc_t;
